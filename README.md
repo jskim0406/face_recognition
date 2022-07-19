@@ -3,20 +3,25 @@
 ## Code Structure
 
 ```
-Face_Recognition/
-  ├── face_detect.py
-  ├── face_rec
-  │   ├── face_capture.py
-  │   ├── face_rec.pb
-  │   ├── face_rec_train.py
-  │   └── train_images
-  ├── face_rec.py
-  └── opencv_face_detector
-      ├── deploy.prototxt
-      ├── opencv_face_detector.pbtxt
-      ├── opencv_face_detector_uint8.pb
-      ├── res10_300x300_ssd_iter_140000_fp16.caffemodel
-      └── weights.meta4
+.
+├── README.md
+├── face_detect.py
+├── face_rec
+│   ├── face_capture.py
+│   ├── face_rec.pb
+│   ├── face_rec_train.py
+│   ├── face_rec_train.sh
+│   └── train_images
+├── face_rec.py
+├── face_rec_test.py
+├── opencv_face_detector
+│   ├── deploy.prototxt
+│   ├── opencv_face_detector.pbtxt
+│   ├── opencv_face_detector_uint8.pb
+│   ├── res10_300x300_ssd_iter_140000_fp16.caffemodel
+│   └── weights.meta4
+├── requirements_m1mac.txt
+└── requirements_ubuntu.txt
 ```
 
 ## Capture Sample Images for Training
@@ -27,14 +32,9 @@ $ python face_rec/face_capture.py
 ```
 
 - Save the cropped images.
-This script saves the cropped face images in `face_rec/outputs` directory. 
+1. This script saves the cropped face images in `face_rec/outputs` directory. 
+2. Make folder(name it `{Person_Name}` like "js_kim") and move images which in `face_rec/outputs` into the folder(like "js_kim").
 
-## Train the network with new data
-
-1. Save train images
-
-Save train images in the directory `face_rec/train_images`.
-Images for each person should be separated by the folder named `{Person_Name}`.
 
 ```
 train_images/
@@ -47,7 +47,11 @@ train_images/
   └── etc.
 ```
 
-2. Run `face_rec_train.py` and update `face_rec.pb` file.
+
+## Train the network with new data
+
+Run `face_rec_train.py` and update `face_rec.pb` file.
+
 
 - Sample Usage (CPU)
 ```
