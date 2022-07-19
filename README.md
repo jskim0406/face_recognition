@@ -1,5 +1,20 @@
 # Face_Recognition
 
+## Set up the environment
+
+You can use ```conda virtual environment```
+
+- In MacOS(M1)
+```
+conda create -n 'virtual env name' --file requirements_m1mac.txt
+```
+
+- In ubuntu
+```
+conda create -n 'virtual env name' --file requirements_ubuntu.txt
+```
+
+
 ## Code Structure
 
 ```
