@@ -1,0 +1,1 @@
+python3 face_rec_train.py --num_epochs 200 --minimum_cost 5e-06
